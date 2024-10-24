@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Uni Wiki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        code,.codeBox{
+            font-family: Cascadia Code, FMono-Regular, Consolas, DejaVu Sans Mono, Liberation Mono, Menlo, monospace !important;
+        }
+        code /*code formatting*/ {
+            font-size: 15px;
+            padding: 2px 5px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .codeBox /*code box*/ {
+            font-size: 14px;
+            padding: 15px;
+            line-height: 1.6;
+            background-color: rgba(15, 15, 15, 0.5);
+            outline: 1px solid rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            color: #fff;
+        }
+        pre{
+            margin: 0;
+        }
+        .codeFormat {
+            font-size: 14px;
+            line-height: 1.4;
+            border: none;
+            background-color: rgba(15, 15, 15, 0.9)!important;
+            color-scheme: dark;
+        }
+        .codeBoxBack {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        .codeTab {
+            background-color: rgba(15, 15, 15, 0.5);
+            border-radius: 10px 10px 0 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            width: fit-content;
+            padding: 10px;
+            color: #ffffffee
+        }
+        .scriptIcon {
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 0!important;
+        }
+        .lineNumber:before {
+            margin-right: 16px;
+            margin-left: -8px;
+            color: #6b6b6b;
+            content: attr(line);
+        }
+        .code.cconsole {
+            color: #9cdcfe;
+        }
+        .code.cpunctuation {
+            color: #d4d4d4;
+        }
+        .code.cmethod {
+            color: #dcdcaa;
+        }
+        .code.cstring {
+            color: #ce9178;
+        }
+        .code.pythonmethod {
+            color: #dcdcaa;
+        }
+        .code.pythonbracket {
+            color: #ffd710;
+        }
+        .code.pythoninnerbracket {
+            color: #da70d6;
+        }
+        .code.pythonint {
+            color: #b5cea8;
+        }
+        .code.pythonstring {
+            color: #ce9178;
+        }
+        .code.pythoncast {
+            color: #4ec9b0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uni Wiki</h1>
+    <p>Hierarchy of code (.java) files goes here -> clickable -> lead to code box + comments</p>
+
+    <br/>
+    <h3>Automatic code box (using highlight.js)</h3>
+
+    <div class="codeBoxBack">
+        <div class="codeTab">
+            <img alt="Java icon" class="scriptIcon" src="assets/java.svg">init.java
+        </div>
+        <pre><code class="codeFormat language-java">number_cakes = int(input("Please enter the number of cakes you would like to buy ... "))
+public static void main(String[] args) throws Exception {
+    System.out.println(toBase10("10001011"));
+    System.err.println(Arrays.toString(split("hello every body"))); //PRINT array
+    System.err.println(Arrays.toString(split("huh. what?", " ,.!?"))); //PRINT array
+    
+    int[] data = {1,2,3,4,5,6,7,8,9,10,11,12};
+    System.err.println(Arrays.deepToString(rasterise(data, 4))); //PRINT array
+}</code></pre>
+    </div>
+    <script>hljs.highlightAll();</script>
+
+    <br/>
+    <h3>Manual code box</h3>
+
+    <div class="codeBoxBack">
+        <div class="codeTab">
+            <img alt="Python icon" class="scriptIcon" src="assets/python.svg">KISS.py
+        </div>
+        <div class="codeBox ">
+            <span class="lineNumber" line="1"></span>number_cakes = <span class="code pythoncast">int</span><span class="code pythonbracket">(</span><span class="code pythonmethod">input</span><span class="code pythoninnerbracket">(</span><span class="code pythonstring">"Please enter the number of cakes you would like to buy "</span><span class="code pythoninnerbracket">)</span><span class="code pythonbracket">)</span></span><br/>
+            <span class="lineNumber" line="2">cake_price = <span class="code pythonint">2.50</span></span><br/>
+            <span class="lineNumber" line="3">bill = cake_price * number_cakes</span><br/>
+            <span class="lineNumber" line="4"><span class="code pythonmethod">print</span><span class="code pythonbracket">(</span><span class="code pythonstring">'The price of'</span> , number_cakes, <span class="code pythonstring">'cakes is'</span>,bill,<span class="code pythonstring">'pounds.'</span><span class="code pythonbracket">)</span></span>
+        </div>        
+    </div>
+
+
+    <br/><a href="../">Home</a>
+    </div>
+</body>
+</html>
